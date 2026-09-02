@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tema de la ventana, no de la interfaz.
+    Define como se ve la pantalla antes de que Compose dibuje. El aspecto real
+    de la app (colores, botones, textos) esta en TemaBancoAndino.kt
+-->
+<resources>
+
+    <style name="Theme.BancoAndino" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/blanco</item>
+        <item name="android:statusBarColor">@color/azul_andino</item>
+    </style>
+
+    <!-- El Splash arranca con el mismo azul del logo para que no haya parpadeo -->
+    <style name="Theme.BancoAndino.Splash">
+        <item name="android:windowBackground">@color/azul_logo</item>
+        <item name="android:statusBarColor">@color/azul_logo</item>
+        <item name="android:navigationBarColor">@color/azul_logo</item>
+    </style>
+
+</resources>

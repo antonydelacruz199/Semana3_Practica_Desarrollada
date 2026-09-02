@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Solo para Android 12 (API 31) y superior.
+    En estas versiones el sistema muestra obligatoriamente su propia pantalla de
+    arranque antes de la Activity. Aqui se pinta del mismo azul del logo y se le
+    pone un icono transparente, de modo que se funde con nuestro Splash y el
+    usuario percibe una sola pantalla de bienvenida.
+-->
+<resources>
+
+    <style name="Theme.BancoAndino.Splash" parent="Theme.BancoAndino">
+        <item name="android:windowBackground">@color/azul_logo</item>
+        <item name="android:statusBarColor">@color/azul_logo</item>
+        <item name="android:navigationBarColor">@color/azul_logo</item>
+        <item name="android:windowSplashScreenBackground">@color/azul_logo</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_icono_vacio</item>
+    </style>
+
+</resources>

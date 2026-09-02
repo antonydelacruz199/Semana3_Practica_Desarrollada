@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Icono transparente. Android 12 y superior obliga a mostrar su propia pantalla
+    de arranque con el icono de la app; al ponerle este icono invisible sobre el
+    mismo azul del logo, el usuario solo percibe un splash: el nuestro.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+</shape>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Solo los colores que necesita la ventana de Android (barra de estado y fondo
+    inicial). Los colores de la interfaz estan en TemaBancoAndino.kt, porque
+    todas las pantallas se dibujan con Jetpack Compose.
+-->
+<resources>
+    <color name="azul_andino">#16406B</color>
+    <color name="azul_logo">#001D4B</color>
+    <color name="blanco">#FFFFFF</color>
+</resources>

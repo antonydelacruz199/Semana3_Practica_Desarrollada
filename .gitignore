@@ -1,0 +1,17 @@
+*.iml
+.gradle
+.kotlin
+.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Claves y credenciales: nunca deben subirse al repositorio
+*.pem
+*.key
+id_rsa*
+id_ed25519*

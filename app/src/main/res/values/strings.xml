@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Banco Andino</string>
+    <string name="login_subtitulo">Banca móvil</string>
+
+    <!-- Login -->
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_clave">Clave</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="error_campos_vacios">Completa usuario y clave</string>
+    <string name="error_credenciales">Credenciales incorrectas</string>
+
+    <!-- Menú inferior -->
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_cuentas">Cuentas</string>
+    <string name="menu_creditos">Créditos</string>
+    <string name="menu_mas">Más</string>
+
+    <!-- Inicio -->
+    <string name="bienvenido_formato">Hola, %1$s</string>
+    <string name="saldo_disponible">Saldo disponible</string>
+    <string name="cuenta_ahorros">Cuenta de Ahorros · 191-2345678-0-90</string>
+    <string name="operaciones_frecuentes">Operaciones frecuentes</string>
+    <string name="op_transferir">Transferir</string>
+    <string name="op_pagar">Pagar servicios</string>
+    <string name="op_recargar">Recargar celular</string>
+    <string name="op_retirar">Retiro sin tarjeta</string>
+    <string name="proximamente">Disponible próximamente</string>
+
+    <!-- Cuentas -->
+    <string name="movimientos_recientes">Movimientos recientes</string>
+
+    <!-- Créditos -->
+    <string name="creditos_titulo">Deuda total de mis créditos</string>
+
+    <!-- Más -->
+    <string name="mas_cliente">Cliente Banco Andino</string>
+    <string name="btn_cerrar_sesion">Cerrar sesión</string>
+</resources>
