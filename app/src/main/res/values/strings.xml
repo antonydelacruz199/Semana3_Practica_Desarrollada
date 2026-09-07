@@ -16,6 +16,7 @@
     <string name="menu_perfil">Perfil</string>
     <string name="menu_mi_perfil">Mi perfil</string>
     <string name="abrir_menu_usuario">Abrir menú de usuario</string>
+    <string name="abrir_drawer">Abrir menú principal</string>
 
     <!-- Inicio -->
     <string name="bienvenido_formato">Hola, %1$s</string>
@@ -24,6 +25,7 @@
     <string name="total_ahorros">Total en ahorros</string>
     <string name="mis_cuentas">Mis cuentas</string>
     <string name="progreso_ahorro">72%%</string>
+    <string name="gastos_categoria">Gastos por categoría</string>
     <string name="operaciones_frecuentes">Operaciones frecuentes</string>
     <string name="op_transferir">Transferir</string>
     <string name="op_pagar">Pagar servicios</string>
@@ -37,12 +39,18 @@
     <string name="total_cuentas_formato">Total: %1$s</string>
     <string name="volver_cuentas">Volver a mis cuentas</string>
     <string name="sin_movimientos">Esta cuenta aún no tiene movimientos.</string>
+    <string name="actualizar_movimientos">Actualizar movimientos</string>
+    <string name="movimientos_actualizados">Movimientos actualizados</string>
+    <string name="ver_detalle_cuenta">Ver detalle</string>
 
     <!-- Créditos -->
     <string name="creditos_titulo">Deuda total de mis créditos</string>
     <string name="mis_creditos">Mis créditos</string>
     <string name="deuda_formato">Deuda: %1$s</string>
     <string name="cuota_proximo_pago_formato">Cuota mensual: %1$s  ·  Próximo pago: %2$s</string>
+    <string name="estado_al_dia">Al día</string>
+    <string name="estado_pago_pendiente">Pago pendiente</string>
+    <string name="cargando_creditos">Cargando créditos...</string>
 
     <!-- Perfil -->
     <string name="perfil_cliente">Cliente Banco Andino</string>
