@@ -13,12 +13,17 @@
     <string name="menu_inicio">Inicio</string>
     <string name="menu_cuentas">Cuentas</string>
     <string name="menu_creditos">Créditos</string>
-    <string name="menu_mas">Más</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_mi_perfil">Mi perfil</string>
+    <string name="abrir_menu_usuario">Abrir menú de usuario</string>
 
     <!-- Inicio -->
     <string name="bienvenido_formato">Hola, %1$s</string>
     <string name="saldo_disponible">Saldo disponible</string>
     <string name="cuenta_ahorros">Cuenta de Ahorros · 191-2345678-0-90</string>
+    <string name="total_ahorros">Total en ahorros</string>
+    <string name="mis_cuentas">Mis cuentas</string>
+    <string name="progreso_ahorro">72%%</string>
     <string name="operaciones_frecuentes">Operaciones frecuentes</string>
     <string name="op_transferir">Transferir</string>
     <string name="op_pagar">Pagar servicios</string>
@@ -28,11 +33,18 @@
 
     <!-- Cuentas -->
     <string name="movimientos_recientes">Movimientos recientes</string>
+    <string name="mis_cuentas_ahorro">Mis cuentas de ahorro</string>
+    <string name="total_cuentas_formato">Total: %1$s</string>
+    <string name="volver_cuentas">Volver a mis cuentas</string>
+    <string name="sin_movimientos">Esta cuenta aún no tiene movimientos.</string>
 
     <!-- Créditos -->
     <string name="creditos_titulo">Deuda total de mis créditos</string>
+    <string name="mis_creditos">Mis créditos</string>
+    <string name="deuda_formato">Deuda: %1$s</string>
+    <string name="cuota_proximo_pago_formato">Cuota mensual: %1$s  ·  Próximo pago: %2$s</string>
 
-    <!-- Más -->
-    <string name="mas_cliente">Cliente Banco Andino</string>
+    <!-- Perfil -->
+    <string name="perfil_cliente">Cliente Banco Andino</string>
     <string name="btn_cerrar_sesion">Cerrar sesión</string>
 </resources>
