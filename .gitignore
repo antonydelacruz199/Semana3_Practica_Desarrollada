@@ -15,3 +15,7 @@ local.properties
 *.key
 id_rsa*
 id_ed25519*
+
+/app7_jetpack_splash_login_menu-main
+/Semana3_Practica01_Desarrollada_Material_Design.pdf
+/Semana04_Practica_Desarrollada_NavDrawer_Graficos_Animaciones.html
