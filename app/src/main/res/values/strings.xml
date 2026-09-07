@@ -17,6 +17,9 @@
     <string name="menu_mi_perfil">Mi perfil</string>
     <string name="abrir_menu_usuario">Abrir menú de usuario</string>
     <string name="abrir_drawer">Abrir menú principal</string>
+    <string name="menu_ayuda">Ayuda</string>
+    <string name="cerrar_dialogo">Cerrar</string>
+    <string name="contacto_ayuda">Comunícate al 999-123-456 para soporte del Banco Andino.</string>
 
     <!-- Inicio -->
     <string name="bienvenido_formato">Hola, %1$s</string>
@@ -51,6 +54,7 @@
     <string name="estado_al_dia">Al día</string>
     <string name="estado_pago_pendiente">Pago pendiente</string>
     <string name="cargando_creditos">Cargando créditos...</string>
+    <string name="cargando_cuentas">Cargando cuentas...</string>
 
     <!-- Perfil -->
     <string name="perfil_cliente">Cliente Banco Andino</string>

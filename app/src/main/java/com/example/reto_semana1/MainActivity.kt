@@ -50,6 +50,7 @@ import androidx.compose.material.icons.filled.CreditCard
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Refresh
@@ -58,6 +59,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -283,6 +285,7 @@ fun PantallaLogin(onLoginCorrecto: (String) -> Unit) {
 fun PantallaPrincipal(nombreUsuario: String, onCerrarSesion: () -> Unit) {
     var menuExpandido by remember { mutableStateOf(false) }
     var seccionSeleccionada by remember { mutableStateOf(0) }
+    var mostrarAyuda by remember { mutableStateOf(false) }
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -336,6 +339,24 @@ fun PantallaPrincipal(nombreUsuario: String, onCerrarSesion: () -> Unit) {
                         modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
                     )
                 }
+
+                HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
+
+                NavigationDrawerItem(
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = stringResource(R.string.menu_ayuda)
+                        )
+                    },
+                    label = { Text(stringResource(R.string.menu_ayuda)) },
+                    selected = false,
+                    onClick = {
+                        mostrarAyuda = true
+                        scope.launch { drawerState.close() }
+                    },
+                    modifier = Modifier.padding(horizontal = 12.dp)
+                )
 
                 HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
 
@@ -415,6 +436,19 @@ fun PantallaPrincipal(nombreUsuario: String, onCerrarSesion: () -> Unit) {
                     else -> SeccionPerfil(nombreUsuario, onCerrarSesion)
                 }
             }
+        }
+
+        if (mostrarAyuda) {
+            AlertDialog(
+                onDismissRequest = { mostrarAyuda = false },
+                confirmButton = {
+                    Button(onClick = { mostrarAyuda = false }) {
+                        Text(stringResource(R.string.cerrar_dialogo))
+                    }
+                },
+                title = { Text(stringResource(R.string.menu_ayuda)) },
+                text = { Text(stringResource(R.string.contacto_ayuda)) }
+            )
         }
     }
 }
@@ -538,6 +572,17 @@ fun SeccionInicio(nombreUsuario: String) {
 fun GraficoGastosPorCategoria() {
     val gastos = DatosDemo.obtenerGastosPorCategoria()
     val montoMaximo = gastos.maxOf { it.monto }
+    var barrasIniciadas by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        barrasIniciadas = true
+    }
+
+    val progresoBarras by animateFloatAsState(
+        targetValue = if (barrasIniciadas) 1f else 0f,
+        animationSpec = tween(durationMillis = 900),
+        label = "progresoBarras"
+    )
 
     Column {
         Text(
@@ -556,7 +601,7 @@ fun GraficoGastosPorCategoria() {
             val alturaMaxima = size.height
 
             gastos.forEachIndexed { indice, gasto ->
-                val alturaBarra = (gasto.monto / montoMaximo) * alturaMaxima
+                val alturaBarra = (gasto.monto / montoMaximo) * alturaMaxima * progresoBarras
                 val x = indice * (anchoBarra * 2f) + anchoBarra / 2f
 
                 drawRect(
@@ -589,6 +634,17 @@ fun SeccionCuentas() {
     var cuentaSeleccionada by remember { mutableStateOf<CuentaAhorro?>(null) }
     val cuenta = cuentaSeleccionada
     val contexto = LocalContext.current
+    var cargando by remember { mutableStateOf(true) }
+
+    LaunchedEffect(Unit) {
+        delay(1000)
+        cargando = false
+    }
+
+    if (cargando) {
+        IndicadorCargaPulsante(stringResource(R.string.cargando_cuentas))
+        return
+    }
 
     if (cuenta == null) {
         Column(
@@ -844,6 +900,11 @@ fun SeccionCreditos() {
 
 @Composable
 fun IndicadorCargaPulsante() {
+    IndicadorCargaPulsante(stringResource(R.string.cargando_creditos))
+}
+
+@Composable
+fun IndicadorCargaPulsante(texto: String) {
     val infiniteTransition = rememberInfiniteTransition(label = "carga")
     val alpha by infiniteTransition.animateFloat(
         initialValue = 0.3f,
@@ -860,7 +921,7 @@ fun IndicadorCargaPulsante() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = stringResource(R.string.cargando_creditos),
+            text = texto,
             color = AzulAndino.copy(alpha = alpha),
             fontSize = 14.sp
         )
